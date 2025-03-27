@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project X</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Create a side bar on the left of the page, a feed in the center and a side bar on the right of the page-->
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class='bx bxl-codepen'></i>
+                <span>Project X</span>
+            </div>
+
+            <!--<i class="bx bx-menu" id="btn"></i> -->
+        </div>
+
+
+        <div class="navbar-main">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-home-alt-2'></i>
+                        <span class="nav-item"> Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxl-gitlab'></i>
+                        <span class="nav-item"> AnimalID</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-photo-album'></i>
+                        <span class="nav-item"> Media</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-map-alt'></i>
+                        <span class="nav-item"> Heatmap</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-scatter-chart'></i>
+                        <span class="nav-item"> Analytics</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="navbar-bottom">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cog'></i>
+                        <span class="nav-item"> Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <h1>Home</h1>
+            <h1>Right Side</h1>
+        </div>
+    </div>
+</body>
+
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+    //let sidebarWidth = sidebar.offsetWidth;
+
+    btn.onclick = function () {
+        sidebar.classList.toggle('active');
+    }
+</script>
+</html>

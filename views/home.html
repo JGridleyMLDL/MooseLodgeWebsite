@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corning Moose Lodge #274</title>
+    <style>
+        :root {
+            --primary-1: #6f1d1b;
+            --secondary-1: #000814;
+            --primary-2: #bb9457;
+            --secondary-2: #432818;
+            --median: #99582a;
+            --neutral-white: #f4f8f9;
+            --footer-section: #bc7109;
+            --text-color: #006d77;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--neutral-white);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-1);
+            color: var(--neutral-white);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            max-width: 800px; /* Adjust this value based on your desired maximum width */
+            width: 100%;
+        }
+
+        .logo {
+            width: 120px; /* Adjust based on your logo size */
+            height: 120px; /* Adjust based on your logo size */
+            margin-right: 40px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .title {
+            flex-grow: 1;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .title p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+        }
+
+        nav {
+            background-color: var(--secondary-1);
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--neutral-white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .slider-section {
+        padding: 20px;
+        background-color: var(--neutral-white);
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 30%;
+            height: 70%;
+            margin: 0 1.5%;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.7;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            flex: 0 0 33%;
+            height: 90%;
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .info-panel img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--footer-section);
+            color: var(--neutral-white);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .info-section-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .info-section-v2 {
+            background-color: var(--primary-2);
+            color: var(--neutral-white);
+            padding: 2rem;
+            width: 50rem;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .info-section {
+            background-color: var(--secondary-2);
+            color: var(--neutral-white);
+            padding: 2rem;
+            width: 50rem;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .info-content {
+            flex: 1;
+            text-align: left;
+            padding-right: 2rem;
+            padding-left:4rem;
+        }
+
+        .info-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            font-weight: bold;
+            font-size: 1.4rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .info-image {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .info-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Hours Section Styles */
+        .hours-section-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 6rem 0;
+        }
+
+        .hours-section {
+            width: 60rem;
+            max-width: 1000px;
+            height: 500px;
+            display: flex;
+            position: relative;
+        }
+
+        .hours-image {
+            width: 58%;
+            height: 100%;
+            background-image: url('../images/moose_bar.jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .hours-content {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            right: 0;
+            top: 20%;
+            background-color: var(--median);
+            color: var(--neutral-white);
+            padding: 2rem;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hours-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--neutral-white);
+            padding-bottom: 0.5rem;
+        }
+
+        .hours-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .hours-list li {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .day {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="../images/logo2_v2.png" alt="Mouse Lodge Logo">
+            </div>
+            <div class="title">
+                <h1>Corning Moose Lodge #274</h1>
+                <p>Painted Post, New York</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Membership</a></li>
+        </ul>
+    </nav>
+
+    <div class="info-section-wrapper">
+        <section class="info-section-v2">
+            <div class="info-content">
+                <h2>A lot is happening at the Lodge!</h2>
+                <p>
+                     Be sure to stay up to date with all our weekly events listed in the newsletter and on the calendar.<br><br> Follow us on Facebook for the latest updates.
+                </p>
+            </div>
+            <div class="info-image">
+                <img src="../images/moose_seal.jpeg" alt="Delicious Tacos">
+            </div>
+        </section>
+    </div>
+
+
+    <div class="hours-section-wrapper">
+        <section class="hours-section">
+            <div class="hours-image"></div>
+            <div class="hours-content">
+                <h2>Current Lodge Hours</h2>
+                <ul class="hours-list">
+                    <li><span class="day">Mon - Fri:</span> 4:00 PM - 10:00 PM</li>
+                    <li><span class="day">Sat:</span> 3:00 PM - 10:00 PM</li>
+                    <li><span class="day">Sun:</span> 3:00 PM - 9:00 PM</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="info-section-wrapper">
+        <section class="info-section">
+            <div class="info-content">
+                <h2>Wednesday Night Dinners</h2>
+                <p>
+                    Don't forget to stop by every Wednesday for dinner!<br>
+                    New plate each week, see calendar for details.<br>
+                    <span class="highlight">5pm until gone</span>
+                </p>
+            </div>
+            <div class="info-image">
+                <img src="../images/dinner_moose.jpeg" alt="Delicious Tacos">
+            </div>
+        </section>
+    </div>
+
+    <div class="info-section-wrapper">
+        <section class="info-section-v2">
+            <div class="info-content">
+                <h2>Taco Tuesdays at the Lodge</h2>
+                <p>
+                    Don't forget to stop by every Tuesday for tacos! <br>
+                    $3 a piece or 3 for $8
+                    <span class="highlight">Starting at 5pm</span>
+                </p>
+            </div>
+            <div class="info-image">
+                <img src="../images/moose_taco.png" alt="Delicious Tacos">
+            </div>
+        </section>
+    </div>
+
+
+    <div>
+        <br><br><br><br>
+    </div>
+    <div class="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="../images/slider1.jpg" alt="Mouse Lodge 1"></div>
+                <div class="slide"><img src="../images/slider2.jpg" alt="Mouse Lodge 2"></div>
+                <div class="slide"><img src="../images/slider3.jpg" alt="Mouse Lodge 3"></div>
+                <div class="slide"><img src="../images/slider4.jpg" alt="Mouse Lodge 4"></div>
+                <div class="slide"><img src="../images/slider5.jpg" alt="Mouse Lodge 5"></div>
+                <div class="slide"><img src="../images/slider6.jpg" alt="Mouse Lodge 6"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2023 Mouse Lodge Organization. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                // Calculate the relative position, considering the circular nature of the slider
+                let relativePosition = (index - currentIndex + slides.length) % slides.length;
+                if (relativePosition === 1) { // This is now the center image
+                    slide.classList.add('active');
+                }
+            });
+            slider.style.transform = `translateX(-${(currentIndex + slides.length) % slides.length * 33}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        // Initialize the slider
+        updateSlider();
+
+        // Automatic rotation every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Optional: Add event listeners for manual navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
+</body>
+</html>
